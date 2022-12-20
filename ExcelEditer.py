@@ -1,10 +1,10 @@
 from openpyxl import load_workbook
 
-wb = load_workbook('list.xlsx')
+wb = load_workbook('list_V01.xlsx')
 ws1 = wb['电子']
 ws2 = wb['机械']
 
-wb3 = load_workbook('文件记录更改通知单-Template.xlsx')
+wb3 = load_workbook('TZD-AAA-A.xlsx')
 ws3 = wb3["TB4.2.3-04"]
 
 # 电子文件生成
@@ -22,7 +22,7 @@ for i in range(2,ws1.max_row+1):
     ws3.cell(row=5, column=1).value = d
     ws3['F6'].value = e
 
-    filename = "OUTPUT_电子/"+filename
+    filename = "OUTPUT/"+filename
     wb3.save(filename)
 
 # 机械文件生成
