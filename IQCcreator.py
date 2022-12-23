@@ -8,8 +8,14 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 1000)
 
 base_dir = Path(__file__).parent
-word_template_path1 = base_dir / "template/IQC-JX-001.docx"
-word_template_path2 = base_dir / "template/TB-IQC-JX-001.docx"
+IQC_001_path = base_dir / "template/IQC-001.docx"
+TB_IQC_001_path = base_dir / "template/TB-IQC-001.docx"
+TZD_AAA_B_IQC_path = base_dir / "template/TZD-AAA-B-IQC.docx"
+TZD_AAA_B_TB_IQC_path = base_dir / "template/TZD-AAA-B-TB-IQC.docx"
+TZD_ABA_B_IQC_path = base_dir / "template/TZD-ABA-B-IQC.docx"
+TZD_ABA_B_TB_IQC_path = base_dir / "template/TZD-ABA-B-TB-IQC.docx"
+
+
 output_dir = base_dir / "OUTPUT"
 
 
@@ -54,18 +60,35 @@ for i in range(0, len(df)):
     str1 = "TB-"+str1.replace("质量标准", "进货检验记录", 1)
     df.loc[i, 'IQC记录文件名称'] = str1
 
-# print(df)
+print(df)
 
 
 
 # Iterate over each row in df and render word document
 for record in df.to_dict(orient="records"):
-    doc = DocxTemplate(word_template_path1)
+    doc = DocxTemplate(IQC_001_path)
     doc.render(record)
     output_path = output_dir / f"{record['IQC文件名称']}"
     doc.save(output_path)
 
-    doc = DocxTemplate(word_template_path2)
+    doc = DocxTemplate(TB_IQC_001_path)
     doc.render(record)
     output_path = output_dir / f"{record['IQC记录文件名称']}"
     doc.save(output_path)
+
+    doc = DocxTemplate(TZD_AAA_B_IQC_path)
+    doc.render(record)
+    output_path = output_dir / f"{record['IQC物料名称']}"
+    doc.save(output_path)
+#
+#     doc = DocxTemplate(word_template_path2)
+#     doc.render(record)
+#     output_path = output_dir / f"{record['IQC记录文件名称']}"
+#     doc.save(output_path)
+#
+#
+# TB_IQC_JX_001_path = base_dir / "template/TB-IQC-JX-001.docx"
+# TZD_AAA_B_IQC_path = base_dir / "template/TZD-AAA-B-IQC.docx"
+# TZD_AAA_B_TB_IQC__path = base_dir / "template/TZD-AAA-B-TB-IQC.docx"
+# TZD_ABA_B_IQC_path = base_dir / "template/TZD-ABA-B-IQC.docx"
+# TZD_ABA_B_TB_IQC_path = base_dir / "template/TZD-ABA-B-TB-IQC.docx"

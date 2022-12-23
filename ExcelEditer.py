@@ -1,6 +1,6 @@
 from openpyxl import load_workbook
 
-wb = load_workbook('list_V01.xlsx')
+wb = load_workbook('list_V02.xlsx')
 ws1 = wb['电子']
 ws2 = wb['机械']
 
