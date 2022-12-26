@@ -6,15 +6,34 @@ for i in range(1, 4):
         rownum.append(k+7)
         k = k + 1
 
-print(rownum)
+# print(rownum)
 
 
 A1 = ['sdfs']
 A2 = ['sdfsfs']
 b = A1+A2
 
-print(b)
+# print(b)
 
+i = 2
+str1 = '00'+str(i)
+# print(str1)
 
+for i in range(1, 7):
+    str1 = '00' + str(i)
+    # print(str1)
 
-# 9,10,11,12,13,16,17,18,19,20,23,24,25,26,27
+IQC_001_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\IQC-001.docx'
+# print(IQC_001_path)
+# IQC_path = IQC_001_path.replace("001", str1, 1)
+# print(IQC_path)
+
+for i in range(1, 7):
+    if i == 3:
+        str1 = '00' + str(i)
+        IQC_001_path
+        IQC_path = IQC_001_path.replace("001", str1, 1)
+        print(IQC_path)
+        print("hello")
+    else:
+        print("hello111")

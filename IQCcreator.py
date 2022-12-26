@@ -31,7 +31,8 @@ df["修改日期"] = pd.to_datetime(df["修改日期"]).dt.date
 # df2["编写日期"] = pd.to_datetime(df2["编写日期"]).dt.date
 
 df["申请日期"] = pd.to_datetime(df["申请日期"]).dt.date
-df["编写日期"] = pd.to_datetime(df["编写日期"]).dt.date
+# df["编写日期"] = pd.to_datetime(df["编写日期"]).dt.date
+df["A版日期"] = pd.to_datetime(df["A版日期"]).dt.date
 
 # 增加IQC文件编号
 df["IQC文件编号"] = df["质量标准编号"]
@@ -79,16 +80,22 @@ for i in range(0, len(df)):
     str1 = "TB-"+str1.replace("质量标准", "进货检验记录文件记录更改通知单", 1)
     df.loc[i, 'IQC记录文件通知单名称'] = str1
 
-print(df)
-
-
-
+IQC_001_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\IQC-001.docx'
 # Iterate over each row in df and render word document
+
 for record in df.to_dict(orient="records"):
-    doc = DocxTemplate(IQC_001_path)
-    doc.render(record)
-    output_path = output_dir / f"{record['IQC文件名称']}"
-    doc.save(output_path)
+    i = 2
+    while i <= 7:
+        if str(record['检验项目'+str(i+1)]) == "nan":
+            str1 = '00'+str(i-1)
+            IQC_path = IQC_001_path.replace("001",str1,1)
+            doc = DocxTemplate(IQC_path)
+            doc.render(record)
+            output_path = output_dir / f"{record['IQC文件名称']}"
+            doc.save(output_path)
+            break
+        else:
+            i += 1
 
     doc = DocxTemplate(TB_IQC_001_path)
     doc.render(record)
@@ -104,7 +111,7 @@ for record in df.to_dict(orient="records"):
         doc.render(record)
         output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
         doc.save(output_path)
-        print('AAA', record['质量标准编号'][:3])
+        # print('AAA', record['质量标准编号'][:3])
     else:
         doc = DocxTemplate(TZD_ABA_B_IQC_path)
         doc.render(record)
@@ -114,16 +121,5 @@ for record in df.to_dict(orient="records"):
         doc.render(record)
         output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
         doc.save(output_path)
-        print('ABA', record['质量标准编号'][:3])
-
-
-#     doc = DocxTemplate(word_template_path2)
-#     doc.render(record)
-#     output_path = output_dir / f"{record['IQC记录文件名称']}"
-#     doc.save(output_path)
-#
-# TB_IQC_JX_001_path = base_dir / "template/TB-IQC-JX-001.docx"
-# TZD_AAA_B_IQC_path = base_dir / "template/TZD-AAA-B-IQC.docx"
-# TZD_AAA_B_TB_IQC__path = base_dir / "template/TZD-AAA-B-TB-IQC.docx"
-# TZD_ABA_B_IQC_path = base_dir / "template/TZD-ABA-B-IQC.docx"
-# TZD_ABA_B_TB_IQC_path = base_dir / "template/TZD-ABA-B-TB-IQC.docx"
+        # print('ABA', record['质量标准编号'][:3])
+    print(record['IQC文件编号']," is done!")
