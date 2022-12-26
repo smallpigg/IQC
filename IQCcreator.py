@@ -31,6 +31,7 @@ df["修改日期"] = pd.to_datetime(df["修改日期"]).dt.date
 # df2["编写日期"] = pd.to_datetime(df2["编写日期"]).dt.date
 
 df["申请日期"] = pd.to_datetime(df["申请日期"]).dt.date
+df["编写日期"] = pd.to_datetime(df["编写日期"]).dt.date
 
 # 增加IQC文件编号
 df["IQC文件编号"] = df["质量标准编号"]
@@ -107,7 +108,7 @@ for record in df.to_dict(orient="records"):
     else:
         doc = DocxTemplate(TZD_ABA_B_IQC_path)
         doc.render(record)
-        output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
+        output_path = output_dir / f"{record['IQC文件通知单名称']}"
         doc.save(output_path)
         doc = DocxTemplate(TZD_ABA_B_TB_IQC_path)
         doc.render(record)
