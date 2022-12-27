@@ -59,44 +59,120 @@ output_dir.mkdir(exist_ok=True)
 df = pd.read_excel(excel_path, sheet_name="Sheet1")
 
 # print(df)
-
+TB_IQC_001_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\TB-IQC-001.docx'
 word_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\wordtest.docx'
 
 document = docx.Document(word_path)
 tables = document.tables
-table1 = tables[0]
+table00 = tables[0]
 
-cell1 = table1.cell(1, 3)
-cell2 = table1.cell(2, 3)
+cell1 = table00.cell(1, 3)
+cell2 = table00.cell(2, 3)
+
+print("111", cell1.text)
+print("111", cell2.text)
+
+for record in df.to_dict(orient="records"):
+    document = docx.Document(TB_IQC_001_path)
+    tables = document.tables
+    table1 = tables[0]
+    table2 = tables[1]
+
+    a = 0
+    for i in range(1, 7):
+        if str(record['检验项目'+str(i+1)]) == "nan":
+            #print("finished")
+            row = table1.add_row()
+            cell3 = row.cells[0]
+            cell4 = row.cells[3]
+            cell3.merge(cell4)
+            row.cells[0].text = "备注："
+            for cell in row.cells:
+                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
+                set_cell_border(cell,
+                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
+            break
+        elif record['检验项目'+str(i)] == "尺寸":
+            table2.cell(2, 0).text = str(i) + '.'
+            a += 1
+        else:
+            list_string = [record['检验项目'+str(i)]]
+            string_set = set(['材料', '产品包装', '单证资料', '规格型号', '合格证明'])
+            row = table1.add_row()
+            row.cells[0].text = str(i) + '.'
+            row.cells[1].text = record['检验项目' + str(i)]
+            row.cells[2].text = record['检验项目' + str(i) + '接收标准']
+            if all([word in string_set for word in list_string]):
+                # row.cells[3].text = cell1.text
+                run = table1.cell(len(table1.rows) - 1, 3).paragraphs[0].add_run(cell1.text)
+            else:
+                # row.cells[3].text = cell2.text
+                run = table1.cell(len(table1.rows) - 1, 3).paragraphs[0].add_run(cell2.text)
+            #run = table1.cell(len(table1.rows)-1, 3).paragraphs[0].add_run(cell1.text)
+            run.font.name = u'宋体'
+            run._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+            for cell in row.cells:
+                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
+                set_cell_border(cell,
+                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
 
 
-row = table1.add_row()
+
+            #print("one row added!")
+            #print(len(tables))
+            a += 1
+    output_path = output_dir / f"{record['name']}"
+    document.save(output_path)
+    # print(a)
 
 
-run = table1.cell(3, 3).paragraphs[0].add_run(cell1.text)
-run.font.name = u'宋体'
-run._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
 
-for cell in row.cells:
-    cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-    cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
-    set_cell_border(cell,
-                    top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                    bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                    left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                    right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                    insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                    end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
 
-print(row)
-print(cell2.text)
-
-# row = table1.rows[-1]
-# str1 = row.cells[0].text
-# print(str1)
-
-output_path = output_dir / "output.docx"
-document.save(output_path)
+# document = docx.Document(word_path)
+# tables = document.tables
+# table1 = tables[0]
+#
+# cell1 = table1.cell(1, 3)
+# cell2 = table1.cell(2, 3)
+#
+# row = table1.add_row()
+#
+# run = table1.cell(3, 3).paragraphs[0].add_run(cell1.text)
+# run.font.name = u'宋体'
+# run._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+#
+# for cell in row.cells:
+#     cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+#     cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
+#     set_cell_border(cell,
+#                     top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+#                     bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+#                     left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+#                     right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+#                     insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+#                     end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
+#
+# print(row)
+# print(cell2.text)
+#
+# # row = table1.rows[-1]
+# # str1 = row.cells[0].text
+# # print(str1)
+#
+# output_path = output_dir / "output.docx"
+# document.save(output_path)
 
 
 

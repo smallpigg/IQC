@@ -11,7 +11,6 @@ from docx.enum.text import WD_TAB_ALIGNMENT
 # from docx.shared import Inches
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-
 def set_cell_border(cell, **kwargs):
     """
     Set cell`s border
@@ -50,8 +49,6 @@ def set_cell_border(cell, **kwargs):
                 if key in edge_data:
                     element.set(qn('w:{}'.format(key)), str(edge_data[key]))
 
-
-
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 1000)
@@ -64,10 +61,7 @@ TZD_AAA_B_TB_IQC_path = base_dir / "template/TZD-AAA-B-TB-IQC.docx"
 TZD_ABA_B_IQC_path = base_dir / "template/TZD-ABA-B-IQC.docx"
 TZD_ABA_B_TB_IQC_path = base_dir / "template/TZD-ABA-B-TB-IQC.docx"
 
-
 output_dir = base_dir / "OUTPUT"
-
-
 excel_path = base_dir / "list_V02.xlsx"
 
 # Create output folder for the word documents
@@ -131,6 +125,9 @@ for i in range(0, len(df)):
 
 IQC_001_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\IQC-001.docx'
 # Iterate over each row in df and render word document
+# IQC_TB_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\IQC-TB-001.docx'
+
+
 
 for record in df.to_dict(orient="records"):
     i = 2
@@ -145,6 +142,8 @@ for record in df.to_dict(orient="records"):
             break
         else:
             i += 1
+
+
 
     doc = DocxTemplate(TB_IQC_001_path)
     doc.render(record)
