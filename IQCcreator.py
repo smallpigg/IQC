@@ -68,8 +68,8 @@ TZD_AAA_B_TB_IQC_path_new = base_dir / "template/TZD-AAA-B-TB-IQC-new.docx"
 TZD_ABA_B_IQC_path_new = base_dir / "template/TZD-ABA-B-IQC-new.docx"
 TZD_ABA_B_TB_IQC_path_new = base_dir / "template/TZD-ABA-B-TB-IQC-new.docx"
 
-excel_path = base_dir / "list_V02 - test.xlsx"
-# excel_path = base_dir / "list_V02.xlsx"
+# excel_path = base_dir / "list_V02 - test.xlsx"
+excel_path = base_dir / "list_V02.xlsx"
 
 # 文件保存地址
 output_dir = base_dir / "OUTPUT"
