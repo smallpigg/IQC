@@ -111,7 +111,7 @@ for i in range(0, len(df)):
 # 增加IQC文件记录文件名称
 df["IQC记录文件名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
-    str1 = 'TB-' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
+    str1 = df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验记录.docx'
     # str1 = df.loc[i, '质量标准文件名称']
     # str1 = str1.replace("MAT","IQC",1)
@@ -134,7 +134,7 @@ for i in range(0, len(df)):
 # 增加TBIQC文件记录通知单文件名称
 df["IQC记录文件通知单名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
-    str1 = 'TB-' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
+    str1 = df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验记录文件记录更改通知单.docx'
     # str1 = df.loc[i, '质量标准文件名称']
     # str1 = str1.replace("MAT","IQC",1)
