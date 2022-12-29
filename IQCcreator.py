@@ -235,10 +235,10 @@ for record in df.to_dict(orient="records"):
             row = table2.rows[0]
             row._element.getparent().remove(row._element)
         delete_paragraph(document.paragraphs[0])
-        row = table1.rows[len(table1.rows)]
+        row = table1.rows[len(table1.rows)-1]
         row._element.getparent().remove(row._element)
     else:
-        for i in range(3, 11):
+        for i in range(3, 10):
             if table2.cell(i, 2).text == 'nan':
                 row = table2.rows[i]
                 row._element.getparent().remove(row._element)
