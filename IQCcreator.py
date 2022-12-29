@@ -231,7 +231,7 @@ for record in df.to_dict(orient="records"):
 
     #删除多余部分
     if table2.cell(2, 2).text == 'nan':
-        for i in range(0, 11):
+        for i in range(0, 19):
             row = table2.rows[0]
             row._element.getparent().remove(row._element)
         delete_paragraph(document.paragraphs[0])
@@ -239,11 +239,11 @@ for record in df.to_dict(orient="records"):
         row._element.getparent().remove(row._element)
     else:
         k = 0
-        for i in range(3, 10):
+        for i in range(3, 18):
             if table2.cell(i, 2).text == 'nan':
                 k = i
                 break
-        for i in range(k, 10):
+        for i in range(k, 18):
             row = table2.rows[k]
             row._element.getparent().remove(row._element)
     document.save(output_path)
