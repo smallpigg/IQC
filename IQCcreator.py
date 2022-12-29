@@ -48,6 +48,10 @@ def set_cell_border(cell, **kwargs):
             for key in ["sz", "val", "color", "space", "shadow"]:
                 if key in edge_data:
                     element.set(qn('w:{}'.format(key)), str(edge_data[key]))
+def delete_paragraph(paragraph):
+    p = paragraph._element
+    p.getparent().remove(p)
+    p._p = p._element = None
 
 # 设置打印内容的显示宽度和长度
 pd.set_option('display.max_rows', 500)
@@ -107,7 +111,7 @@ for i in range(0, len(df)):
     # str1 = str1.replace("MAT","IQC",1)
     # str1 = str1.replace("质量标准", "进货检验作业指导书", 1)
     df.loc[i, 'IQC文件名称'] = str1
-    print(str1)
+    # print(str1)
 
 # 增加IQC文件记录文件名称
 df["IQC记录文件名称"] = df["质量标准文件名称"]
@@ -145,9 +149,6 @@ for i in range(0, len(df)):
     # str1 = "TB-"+str1.replace("质量标准", "进货检验记录文件记录更改通知单", 1)
     df.loc[i, 'IQC记录文件通知单名称'] = str1
 
-
-IQC_001_path = 'C:\\Users\\Zz\PycharmProjects\\IQC\\template\\IQC-001.docx'
-
 # 读取记录单中填表需要的两个单元格内容
 document = docx.Document(TB_IQC_000_path)
 tables = document.tables
@@ -160,7 +161,7 @@ for record in df.to_dict(orient="records"):
     while i <= 7:
         if str(record['检验项目'+str(i+1)]) == "nan":
             str1 = '00'+str(i-1)
-            IQC_path = IQC_001_path.replace("001",str1,1)
+            IQC_path = str(IQC_001_path).replace("001",str1,1)
             doc = DocxTemplate(IQC_path)
             doc.render(record)
             output_path = output_dir / f"{record['IQC文件名称']}"
@@ -170,14 +171,24 @@ for record in df.to_dict(orient="records"):
             i += 1
 
     # 生成记录单
-    document = docx.Document(TB_IQC_001_path)
+    # 渲染表格内容
+    doc = DocxTemplate(TB_IQC_001_path)
+    doc.render(record)
+    output_path = output_dir / f"{record['IQC记录文件名称']}"
+    doc.save(output_path)
+
+    # 填充表格
+    document = docx.Document(output_path)
     tables = document.tables
     table1 = tables[0]
     table2 = tables[1]
 
     a = 0
     for i in range(1, 7):
-        if str(record['检验项目'+str(i+1)]) == "nan":
+        if record['检验项目'+str(i)] == "尺寸":
+            table2.cell(2, 0).text = str(i) + '.'
+            a += 1
+        elif str(record['检验项目' + str(i + 1)]) == "nan":
             row = table1.add_row()
             row.cells[0].merge(row.cells[3])
             row.cells[0].text = "备注："
@@ -192,9 +203,6 @@ for record in df.to_dict(orient="records"):
                                 insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
                                 end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
             break
-        elif record['检验项目'+str(i)] == "尺寸":
-            table2.cell(2, 0).text = str(i) + '.'
-            a += 1
         else:
             list_string = [record['检验项目'+str(i)]]
             string_set = set(['材料', '产品包装', '单证资料', '规格型号', '合格证明'])
@@ -220,11 +228,21 @@ for record in df.to_dict(orient="records"):
                                 end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
 
             a += 1
-    output_path = output_dir / f"{record['IQC记录文件名称']}"
+
+    #删除多余部分
+    if table2.cell(2, 2).text == 'nan':
+        for i in range(0, 11):
+            row = table2.rows[0]
+            row._element.getparent().remove(row._element)
+        delete_paragraph(document.paragraphs[0])
+        row = table1.rows[len(table1.rows)]
+        row._element.getparent().remove(row._element)
+    else:
+        for i in range(3, 11):
+            if table2.cell(i, 2).text == 'nan':
+                row = table2.rows[i]
+                row._element.getparent().remove(row._element)
     document.save(output_path)
-    doc = DocxTemplate(output_path)
-    doc.render(record)
-    doc.save(output_path)
 
     # 生成AAA两个通知单
     if record['质量标准编号'][:3] == 'AAA':
