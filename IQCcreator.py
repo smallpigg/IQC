@@ -238,10 +238,14 @@ for record in df.to_dict(orient="records"):
         row = table1.rows[len(table1.rows)-1]
         row._element.getparent().remove(row._element)
     else:
+        k = 0
         for i in range(3, 10):
             if table2.cell(i, 2).text == 'nan':
-                row = table2.rows[i]
-                row._element.getparent().remove(row._element)
+                k = i
+                break
+        for i in range(k, 10):
+            row = table2.rows[k]
+            row._element.getparent().remove(row._element)
     document.save(output_path)
 
     # 生成AAA两个通知单
