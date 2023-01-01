@@ -2,15 +2,11 @@ from pathlib import Path
 from docxtpl import DocxTemplate  # pip install docxtpl
 import docx
 import pandas as pd
-# import os
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.enum.text import WD_TAB_ALIGNMENT
-# from docx.enum.style import WD_STYLE_TYPE
-# from docx.enum.table import WD_TABLE_ALIGNMENT
-# from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
-# from docx.shared import Inches
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+
 def set_cell_border(cell, **kwargs):
     """
     Set cell`s border
@@ -107,20 +103,13 @@ df["IQC文件名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
 
     str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC版本'] + '版 ' + df.loc[i, 'IQC物料名称'] + ' ' + '进货检验作业指导书.docx'
-    # str1 = df.loc[i, '质量标准文件名称']
-    # str1 = str1.replace("MAT","IQC",1)
-    # str1 = str1.replace("质量标准", "进货检验作业指导书", 1)
     df.loc[i, 'IQC文件名称'] = str1
-    # print(str1)
 
 # 增加IQC文件记录文件名称
 df["IQC记录文件名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
     str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_' + 'TB-' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验记录.docx'
-    # str1 = df.loc[i, '质量标准文件名称']
-    # str1 = str1.replace("MAT","IQC",1)
-    # str1 = "TB-"+str1.replace("质量标准", "进货检验记录", 1)
     df.loc[i, 'IQC记录文件名称'] = str1
 
 # 增加IQC文件记录通知单文件名称
@@ -128,12 +117,6 @@ df["IQC文件通知单名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
     str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验作业指导书文件记录更改通知单.docx'
-    # str1 = df.loc[i, '质量标准文件名称']
-    # str1 = str1.replace("MAT","IQC",1)
-    # str2 = str1[12]
-    # str3 = df.loc[i, 'IQC版本']
-    # str1 = str1.replace(str2, str3, 1)
-    # str1 = str1.replace("质量标准", "进货检验作业指导书文件记录更改通知单", 1)
     df.loc[i, 'IQC文件通知单名称'] = str1
 
 # 增加TBIQC文件记录通知单文件名称
@@ -166,6 +149,14 @@ for record in df.to_dict(orient="records"):
             doc.render(record)
             output_path = output_dir / f"{record['IQC文件名称']}"
             doc.save(output_path)
+            document = docx.Document(output_path)
+            tables = document.tables
+            table1 = tables[-1]
+            if str(record['IQC版本']) == "A":
+                row = table1.rows[-1]
+                row._element.getparent().remove(row._element)
+                table1.cell(1, 1).text = str(record['申请日期'])
+            document.save(output_path)
             break
         else:
             i += 1
