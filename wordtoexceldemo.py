@@ -44,7 +44,7 @@ for single_path in docx_list:
 
     lfn = len(cells)+2
     rownum = ["filename", "numfubiao", "version", "date", "person", "changes"]
-    k = 1
+    k = 2
     for i in range(1, len(table1.rows)):
         k = k + 1
         for j in range(1, len(table1.columns)):
@@ -56,7 +56,7 @@ for single_path in docx_list:
     df.rename(columns={0: "filename", 1: "numfubiao", lfn - 4: "version", lfn - 3: "date", lfn - 2: "person", lfn - 1: "changes"}, inplace=True)
     pd_data.append(df[rownum])
 
-    print(filename, "done!")
+    # print(filename, "done!")
 
 pd_data = pd.concat(pd_data)
 pd_data.to_csv(output_path, encoding='utf_8_sig',index=False)
