@@ -179,22 +179,7 @@ for record in df.to_dict(orient="records"):
         if record['检验项目'+str(i)] == "尺寸":
             table2.cell(2, 0).text = str(i) + '.'
             a += 1
-        elif str(record['检验项目' + str(i + 1)]) == "nan":
-            row = table1.add_row()
-            row.cells[0].merge(row.cells[3])
-            row.cells[0].text = "备注："
-            for cell in row.cells:
-                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
-                set_cell_border(cell,
-                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
-            break
-        else:
+        elif str(record['检验项目' + str(i)]) != "nan":
             list_string = [record['检验项目'+str(i)]]
             string_set = set(['材料', '产品包装', '单证资料', '规格型号', '合格证明'])
             row = table1.add_row()
@@ -219,6 +204,21 @@ for record in df.to_dict(orient="records"):
                                 end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
 
             a += 1
+        else:
+            row = table1.add_row()
+            row.cells[0].merge(row.cells[3])
+            row.cells[0].text = "备注："
+            for cell in row.cells:
+                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
+                set_cell_border(cell,
+                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
+            break
 
     #删除多余部分
     if table2.cell(2, 2).text == 'nan':
