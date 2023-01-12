@@ -68,8 +68,8 @@ TZD_AAA_B_TB_IQC_path_new = base_dir / "template/TZD-AAA-B-TB-IQC-new.docx"
 TZD_ABA_B_IQC_path_new = base_dir / "template/TZD-ABA-B-IQC-new.docx"
 TZD_ABA_B_TB_IQC_path_new = base_dir / "template/TZD-ABA-B-TB-IQC-new.docx"
 
-# excel_path = base_dir / "list_V02 - test.xlsx"
-excel_path = base_dir / "list_V02.xlsx"
+excel_path = base_dir / "list_V02 - test.xlsx"
+# excel_path = base_dir / "list_V02.xlsx"
 
 # 文件保存地址
 output_dir = base_dir / "OUTPUT"
@@ -264,14 +264,34 @@ for record in df.to_dict(orient="records"):
     # print('AAA', record['质量标准编号'][:3])
     # 生成ABA两个通知单
     else:
-        doc = DocxTemplate(TZD_ABA_B_IQC_path)
-        doc.render(record)
-        output_path = output_dir / f"{record['IQC文件通知单名称']}"
-        doc.save(output_path)
-        doc = DocxTemplate(TZD_ABA_B_TB_IQC_path)
-        doc.render(record)
-        output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
-        doc.save(output_path)
+        if record['IQC版本'] == 'A':
+            doc = DocxTemplate(TZD_ABA_B_IQC_path_new)
+            doc.render(record)
+            output_path = output_dir / f"{record['IQC文件通知单名称']}"
+            doc.save(output_path)
+        else:
+            doc = DocxTemplate(TZD_ABA_B_IQC_path)
+            doc.render(record)
+            output_path = output_dir / f"{record['IQC文件通知单名称']}"
+            doc.save(output_path)
+        if record['IQC_TB版本'] == 'A':
+            doc = DocxTemplate(TZD_ABA_B_TB_IQC_path_new)
+            doc.render(record)
+            output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
+            doc.save(output_path)
+        else:
+            doc = DocxTemplate(TZD_ABA_B_TB_IQC_path)
+            doc.render(record)
+            output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
+            doc.save(output_path)
+        # doc = DocxTemplate(TZD_ABA_B_IQC_path)
+        # doc.render(record)
+        # output_path = output_dir / f"{record['IQC文件通知单名称']}"
+        # doc.save(output_path)
+        # doc = DocxTemplate(TZD_ABA_B_TB_IQC_path)
+        # doc.render(record)
+        # output_path = output_dir / f"{record['IQC记录文件通知单名称']}"
+        # doc.save(output_path)
         # print('ABA', record['质量标准编号'][:3])
 
     print(record['IQC文件编号']," is done!")
