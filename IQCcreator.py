@@ -68,7 +68,7 @@ TZD_AAA_B_TB_IQC_path_new = base_dir / "template/TZD-AAA-B-TB-IQC-new.docx"
 TZD_ABA_B_IQC_path_new = base_dir / "template/TZD-ABA-B-IQC-new.docx"
 TZD_ABA_B_TB_IQC_path_new = base_dir / "template/TZD-ABA-B-TB-IQC-new.docx"
 
-excel_path = base_dir / "list_V02 - test.xlsx"
+excel_path = base_dir / "list_V02 - 副本.xlsx"
 # excel_path = base_dir / "list_V02.xlsx"
 
 # 文件保存地址
@@ -108,14 +108,14 @@ for i in range(0, len(df)):
 # 增加IQC文件记录文件名称
 df["IQC记录文件名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
-    str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_2_' + 'TB-' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
+    str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_3_' + 'TB-' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC_TB版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验记录.docx'
     df.loc[i, 'IQC记录文件名称'] = str1
 
 # 增加IQC文件记录通知单文件名称
 df["IQC文件通知单名称"] = df["质量标准文件名称"]
 for i in range(0, len(df)):
-    str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_3_' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC版本'] + '版 ' + df.loc[
+    str1 = df.loc[i, 'IQC文件编号'][0:3] + df.loc[i, 'IQC文件编号'][8:11] + '_2_' + df.loc[i, 'IQC文件编号'] + '-' + df.loc[i, 'IQC版本'] + '版 ' + df.loc[
         i, 'IQC物料名称'] + ' ' + '进货检验作业指导书文件记录更改通知单.docx'
     df.loc[i, 'IQC文件通知单名称'] = str1
 
