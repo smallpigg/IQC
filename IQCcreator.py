@@ -196,12 +196,12 @@ for record in df.to_dict(orient="records"):
                 cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                 cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
                 set_cell_border(cell,
-                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
+                                top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
 
             a += 1
         else:
@@ -212,12 +212,12 @@ for record in df.to_dict(orient="records"):
                 cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
                 cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
                 set_cell_border(cell,
-                                top={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                bottom={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                left={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                right={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                insideH={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"},
-                                end={"sz": 0.5, "val": "single", "color": "#000000", "space": "0"})
+                                top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
             break
 
     #删除多余部分
