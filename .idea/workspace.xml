@@ -4,57 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/IQC.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExcelEditer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IQCcreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/IQCcreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V01.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 000.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本1.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本2.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本3.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本4.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/list_V02 - 副本5.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/wordtest - 副本.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/List Backup/wordtest.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TB-SJ-QS 8.2.6-02 报检单（A版）.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adddatatotable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baojiandan.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bjd.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/list_V02 - test.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/list_V02 - 副本.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/list_V02.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/savepicture.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-001.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-002.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-003.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-004.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-005.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-006.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TB-IQC-001.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/t123-s.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/t123.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/wordtest.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/IQC-DZ-001.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/IQC-DZ-002.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/IQC-DZ-003.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/TB-IQC-DZ-001.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/TB-IQC-DZ-002.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/TZD-AAA-A.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/新建文件夹/TZD-ABA-A.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bjd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/t121.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/t122.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/t123.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/t123.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ttt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/wordfiletest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/xlrdtest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordtoexceldemo.py" beforeDir="false" />
-    </list>
+    <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="00.02.002" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,6 +86,29 @@
       <option name="presentableId" value="Default" />
       <updated>1680249497459</updated>
     </task>
+    <task id="LOCAL-00001" summary="00.02.002">
+      <created>1682299459061</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682299459061</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="00.02.002" />
+    <option name="LAST_COMMIT_MESSAGE" value="00.02.002" />
   </component>
 </project>
