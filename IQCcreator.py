@@ -72,7 +72,7 @@ excel_path = base_dir / "list_V02 - 副本.xlsx"
 # excel_path = base_dir / "list_V02.xlsx"
 
 # 文件保存地址
-output_dir = base_dir / "OUTPUT"
+output_dir = base_dir / "output"
 # Create output folder for the word documents
 output_dir.mkdir(exist_ok=True)
 
