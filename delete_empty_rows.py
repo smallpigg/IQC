@@ -8,7 +8,9 @@ def delete_empty_rows(table, n):
         if X_cell.text == 'nan' or X_cell.text == '':
             row._element.getparent().remove(row._element)
             
-# 示例
+
+
+# 示例用法
 # file_path = "1.docx"
 
 # checkbox_value = 1

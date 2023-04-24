@@ -34,11 +34,11 @@ def concatenate_columns(file_path, sheet_name, col1, col2, delimiter, new_col):
     print(f"合并了{max_row}行")
 
 # 示例用法
-file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
-sheet_name = "Sheet1"  # 你要操作的工作表名称
-col1 = 1  # 第一列的索引（基于1的索引）
-col2 = 2  # 第二列的索引（基于1的索引）
-delimiter = "_"  # 用于连接字符串的分隔符
-new_col = 3  # 合并后的新列的索引（基于1的索引）
+# file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
+# sheet_name = "Sheet1"  # 你要操作的工作表名称
+# col1 = 1  # 第一列的索引（基于1的索引）
+# col2 = 2  # 第二列的索引（基于1的索引）
+# delimiter = "_"  # 用于连接字符串的分隔符
+# new_col = 3  # 合并后的新列的索引（基于1的索引）
 
-concatenate_columns(file_path, sheet_name, col1, col2, delimiter, new_col)
+# concatenate_columns(file_path, sheet_name, col1, col2, delimiter, new_col)

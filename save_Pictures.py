@@ -26,17 +26,18 @@ def get_pictures(word_path, result_path):
             with open(f'{result_path}/{img_name}', "wb") as f:
                 f.write(rel.target_part.blob)
 
+
+# 示例用法
 base_dir = Path(__file__).parent
-word_path = base_dir / "wordfiles"
+word_path = base_dir / "word_files"
 images_path = base_dir / "images"
 # path_list = os.listdir(word_path)
 # docx_list = [os.path.join(word_path,str(i)) for i in path_list if str(i).endswith('docx')]
 # output_path = word_path / "images"
 
-if __name__ == '__main__':
-    os.chdir(word_path)
-    spam=os.listdir(os.getcwd())
-    for i in spam:
-        get_pictures(str(i), images_path)
-        print(str(i), images_path)
+os.chdir(word_path)
+spam=os.listdir(os.getcwd())
+for i in spam:
+    get_pictures(str(i), images_path)
+    # print(str(i), images_path)
 

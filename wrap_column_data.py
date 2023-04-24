@@ -33,11 +33,11 @@ def wrap_column_data(file_path, sheet_name, column, prefix, suffix, new_column):
     print(f"处理了{max_row}行")
 
 # 示例用法
-file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
-sheet_name = "Sheet1"  # 你要操作的工作表名称
-column = 1  # 要操作的列索引（基于1的索引）
-prefix = "["  # 要添加到数据前面的字符
-suffix = "]"  # 要添加到数据后面的字符
-new_column = 2  # 结果保存的新列索引（基于1的索引）
+# file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
+# sheet_name = "Sheet1"  # 你要操作的工作表名称
+# column = 1  # 要操作的列索引（基于1的索引）
+# prefix = "["  # 要添加到数据前面的字符
+# suffix = "]"  # 要添加到数据后面的字符
+# new_column = 2  # 结果保存的新列索引（基于1的索引）
 
-wrap_column_data(file_path, sheet_name, column, prefix, suffix, new_column)
+# wrap_column_data(file_path, sheet_name, column, prefix, suffix, new_column)

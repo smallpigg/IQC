@@ -40,8 +40,9 @@ def process_batch_word_files(input_folder, output_file, table_numbers):
     result_df = pd.concat(dfs, ignore_index=True)
     result_df.to_excel(output_file, index=False)
 
-input_folder = "word_files"  # 替换为包含Word文档的文件夹路径
-output_file = "output.xlsx"  # 替换为你想要保存结果的Excel文件路径
-table_numbers = [1, 3]  # 替换为你想要读取的表格序号列表
+# 示例用法
+# input_folder = "word_files"  # 替换为包含Word文档的文件夹路径
+# output_file = "output.xlsx"  # 替换为你想要保存结果的Excel文件路径
+# table_numbers = [1, 3]  # 替换为你想要读取的表格序号列表
 
-process_batch_word_files(input_folder, output_file, table_numbers)
+# process_batch_word_files(input_folder, output_file, table_numbers)

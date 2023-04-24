@@ -29,9 +29,9 @@ def delete_columns_with_specific_text(file_path, sheet_name, text_to_match):
     workbook.save(file_path)
     print(f"删除了{len(columns_to_delete)}列")
 
-# 示例用法
-file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
-sheet_name = "Sheet1"  # 你要操作的工作表名称
-text_to_match = "example"  # 要匹配的文本
+# # 示例用法
+# file_path = "your_excel_file.xlsx"  # 你的Excel文件路径
+# sheet_name = "Sheet1"  # 你要操作的工作表名称
+# text_to_match = "example"  # 要匹配的文本
 
-delete_columns_with_specific_text(file_path, sheet_name, text_to_match)
+# delete_columns_with_specific_text(file_path, sheet_name, text_to_match)

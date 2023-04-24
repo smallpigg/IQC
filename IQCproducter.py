@@ -4,6 +4,8 @@ import docx
 import pandas as pd
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.enum.text import WD_TAB_ALIGNMENT
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
@@ -227,19 +229,29 @@ for record in df.to_dict(orient="records"):
 
             a += 1
         else:
-            # row = table1.add_row()
-            # row.cells[0].merge(row.cells[3])
-            # row.cells[0].text = "备注："
-            # for cell in row.cells:
-            #     cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            #     cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
-            #     set_cell_border(cell,
-            #                     top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-            #                     bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-            #                     left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-            #                     right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-            #                     insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-            #                     end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
+            row = table1.add_row()
+            row.cells[0].merge(row.cells[2])
+            row.cells[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            row.cells[0].text = "检验结果"
+            
+            # table1.alignment = WD_TABLE_ALIGNMENT.CENTER
+            # print(row)
+            cell_10 = row.cells[0]
+            paragraph = cell_10.paragraphs[0]
+            # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            run = paragraph.runs[0]
+            run.font.bold = True
+            
+            for cell in row.cells:
+                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
+                set_cell_border(cell,
+                                top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+                                end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
             break
 
     #删除多余部分
@@ -259,6 +271,21 @@ for record in df.to_dict(orient="records"):
         for i in range(k, 18):
             row = table2.rows[k]
             row._element.getparent().remove(row._element)
+    
+    # 获取第一个表格
+    table3 = document.tables[1]
+
+    # 获取第一列的第一行的文本
+    first_cell_text = table3.cell(0, 0).text
+    
+    # print(first_cell_text)
+
+    # 检查是否存在目标字符串
+    str_to_delete = '检验结果'
+    if first_cell_text == str_to_delete:
+        # 如果存在，删除表格
+        table3._element.clear()
+    
     document.save(output_path)
 
     # 生成AAA两个通知单
