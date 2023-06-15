@@ -6,20 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="00.02.004">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IQCcreator.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/IQCproducter.py" beforeDir="false" afterPath="$PROJECT_DIR$/IQCproducter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Word_To_Excel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/concatenate_columns.py" beforeDir="false" afterPath="$PROJECT_DIR$/concatenate_columns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete_columns_with_specific_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_columns_with_specific_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete_empty_rows.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_empty_rows.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_table_with_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_table_with_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_words_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_words_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result-backup.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/result/result-backup.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result-output.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/result/result-output.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save_Pictures.py" beforeDir="false" afterPath="$PROJECT_DIR$/save_Pictures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-B.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/IQC-B.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MATdata_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/MATdata_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete_columns_from_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_columns_from_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/replace_string_in_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/replace_string_in_excel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/TB-IQC-B.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TB-IQC-B.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrap_column_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/wrap_column_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.wordtoexceldemo">
+  <component name="RunManager" selected="Python.IQCproducter">
     <configuration name="IQCcreator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IQC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,6 +56,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IQCcreator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IQCproducter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IQC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/IQCproducter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MATdata_reader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IQC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MATdata_reader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,6 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.IQCproducter" />
+        <item itemvalue="Python.MATdata_reader" />
         <item itemvalue="Python.wordtoexceldemo" />
         <item itemvalue="Python.IQCcreator" />
       </list>
@@ -116,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682299653185</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="00.02.004">
+      <created>1682319560201</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682319560201</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +183,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="00.02.002" />
     <MESSAGE value="00.02.003" />
-    <option name="LAST_COMMIT_MESSAGE" value="00.02.003" />
+    <MESSAGE value="00.02.004" />
+    <option name="LAST_COMMIT_MESSAGE" value="00.02.004" />
   </component>
 </project>

@@ -33,9 +33,9 @@ def replace_string_in_excel(file_path, sheet_name, find_str, replace_str):
     print("已完成字符串替换")
 
 # # 示例用法
-# file_path = "result\\result-output.xlsx"  # 你的Excel文件路径
-# sheet_name = "Sheet1"  # 你要操作的工作表名称
-# find_str = "\n质量标准\nQuality Standard"  # 要查找的字符串
-# replace_str = ""  # 用于替换的字符串
+file_path = "result\\result-output.xlsx"  # 你的Excel文件路径
+sheet_name = "Sheet1"  # 你要操作的工作表名称
+find_str = "\n质量标准\nQuality Standard"  # 要查找的字符串
+replace_str = ""  # 用于替换的字符串
 
-# replace_string_in_excel(file_path, sheet_name, find_str, replace_str)
+replace_string_in_excel(file_path, sheet_name, find_str, replace_str)

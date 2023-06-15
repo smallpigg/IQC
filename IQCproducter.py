@@ -199,17 +199,21 @@ for record in df.to_dict(orient="records"):
     table2 = tables[1]
 
     a = 0
-    for i in range(1, 7):
+    for i in range(1, 10):
         if record['项目'+str(i)] == "尺寸":
             table2.cell(2, 0).text = str(i) + '.'
+            table2.cell(2, 0).paragraphs[0].alignment = WD_TAB_ALIGNMENT.CENTER
             a += 1
         elif str(record['项目' + str(i)]) != "nan":
             list_string = [record['项目'+str(i)]]
-            string_set = set(['材料', '产品包装', '单证资料', '规格型号', '合格证明'])
+            string_set = set(['材料', '材质', '产品包装', '单证资料', '规格型号', '合格证明', '认证资料', '产品描述'])
             row = table1.add_row()
             row.cells[0].text = str(i) + '.'
+            row.cells[0].paragraphs[0].alignment = WD_TAB_ALIGNMENT.CENTER
             row.cells[1].text = record['项目' + str(i)]
+            row.cells[1].paragraphs[0].alignment = WD_TAB_ALIGNMENT.LEFT
             row.cells[2].text = record['接收标准' + str(i)]
+            row.cells[2].paragraphs[0].alignment = WD_TAB_ALIGNMENT.LEFT
             if all([word in string_set for word in list_string]):
                 run = table1.cell(len(table1.rows) - 1, 3).paragraphs[0].add_run(cell1.text)
             else:
@@ -218,7 +222,7 @@ for record in df.to_dict(orient="records"):
             run._element.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
             for cell in row.cells:
                 cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
+                # cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.CENTER
                 set_cell_border(cell,
                                 top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
                                 bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
@@ -226,37 +230,39 @@ for record in df.to_dict(orient="records"):
                                 right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
                                 insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
                                 end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
-
+            
+            
             a += 1
         else:
-            row = table1.add_row()
-            row.cells[0].merge(row.cells[2])
-            row.cells[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            row.cells[0].text = "检验结果"
+            # row = table1.add_row()
+            # row.cells[0].merge(row.cells[2])
+            # row.cells[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            # row.cells[0].text = "检验结果"
             
-            # table1.alignment = WD_TABLE_ALIGNMENT.CENTER
-            # print(row)
-            cell_10 = row.cells[0]
-            paragraph = cell_10.paragraphs[0]
-            # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            run = paragraph.runs[0]
-            run.font.bold = True
+            # # table1.alignment = WD_TABLE_ALIGNMENT.CENTER
+            # # print(row)
+            # cell_10 = row.cells[0]
+            # paragraph = cell_10.paragraphs[0]
+            # # paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            # run = paragraph.runs[0]
+            # run.font.bold = True
             
-            for cell in row.cells:
-                cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
-                set_cell_border(cell,
-                                top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-                                bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-                                left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-                                right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-                                insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
-                                end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
+            # for cell in row.cells:
+            #     cell.vertical_alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            #     cell.paragraphs[0].paragraph_format.alignment = WD_TAB_ALIGNMENT.LEFT
+            #     set_cell_border(cell,
+            #                     top={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+            #                     bottom={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+            #                     left={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+            #                     right={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+            #                     insideH={"sz": 4, "val": "single", "color": "#000000", "space": "0"},
+            #                     end={"sz": 4, "val": "single", "color": "#000000", "space": "0"})
             break
 
+    ChicunrowNum = 25
     #删除多余部分
     if table2.cell(2, 2).text == 'nan':
-        for i in range(0, 19):
+        for i in range(0, ChicunrowNum+3):
             row = table2.rows[0]
             row._element.getparent().remove(row._element)
         delete_paragraph(document.paragraphs[0])
@@ -264,21 +270,23 @@ for record in df.to_dict(orient="records"):
         row._element.getparent().remove(row._element)
     else:
         k = 0
-        for i in range(3, 18):
+        for i in range(3, ChicunrowNum+2):
             if table2.cell(i, 2).text == 'nan':
                 k = i
                 break
-        for i in range(k, 18):
+        for i in range(k, ChicunrowNum+2):
             row = table2.rows[k]
             row._element.getparent().remove(row._element)
     
     # 获取第一个表格
     table3 = document.tables[1]
-
+    first_cell_text = ''
     # 获取第一列的第一行的文本
-    first_cell_text = table3.cell(0, 0).text
+    print(len(table3.rows))
+    if len(table3.rows)>=1:
+        first_cell_text = table3.cell(0, 0).text
     
-    # print(first_cell_text)
+    print(first_cell_text)
 
     # 检查是否存在目标字符串
     str_to_delete = '检验结果'
