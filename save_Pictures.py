@@ -2,6 +2,10 @@ import docx
 import os, re
 from pathlib import Path
 
+""" 
+保存word文件中的图片到指定文件夹
+"""
+
 def get_pictures(word_path, result_path):
     """
     图片提取

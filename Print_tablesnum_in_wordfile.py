@@ -3,6 +3,10 @@ import docx
 import pandas as pd
 from pathlib import Path
 
+"""
+保存word文件内容到csv文件，其中一列数据包含了正文的表格数量
+"""
+
 base_dir = Path(__file__).parent
 word_path = base_dir / "word_files"
 path_list = os.listdir(word_path)

@@ -266,8 +266,8 @@ for record in df.to_dict(orient="records"):
             row = table2.rows[0]
             row._element.getparent().remove(row._element)
         delete_paragraph(document.paragraphs[0])
-        row = table1.rows[len(table1.rows)-1]
-        row._element.getparent().remove(row._element)
+        # row = table1.rows[len(table1.rows)-1]
+        # row._element.getparent().remove(row._element)
     else:
         k = 0
         for i in range(3, ChicunrowNum+2):
@@ -282,11 +282,11 @@ for record in df.to_dict(orient="records"):
     table3 = document.tables[1]
     first_cell_text = ''
     # 获取第一列的第一行的文本
-    print(len(table3.rows))
+    # print(len(table3.rows))
     if len(table3.rows)>=1:
         first_cell_text = table3.cell(0, 0).text
     
-    print(first_cell_text)
+    # print(first_cell_text)
 
     # 检查是否存在目标字符串
     str_to_delete = '检验结果'
