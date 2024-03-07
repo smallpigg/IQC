@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="00.03.001">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delete_columns_by_header.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_columns_by_header.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/MATdata处理过程.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result-output - 20230614.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result-output.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-B.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/IQC-B.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TB-IQC-B-xx.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TB-IQC-B-xx.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TB-IQC-B.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TB-IQC-B.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" beforeDir="false" afterPath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +22,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="90bab0f3-d451-479b-8aa8-bca7c1d5e747" />
+        <option name="url" value="https://github.com/smallpigg/IQC.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectId" id="2NlrQx3c5MnTH62jhl0urooc1mx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/xx/PycharmProjects/MAG",
+    "last_opened_file_path": "C:/Users/xx/PycharmProjects/IQC",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
