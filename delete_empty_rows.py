@@ -5,7 +5,7 @@ def delete_empty_rows(table, n):
     # 增加对n和表格列数的比较
     for row in table.rows:
         X_cell = row.cells[n-1]
-        if X_cell.text == 'nan' or X_cell.text == '':
+        if X_cell.text in ('nan', '', 'NaT'):
             row._element.getparent().remove(row._element)
             
 
