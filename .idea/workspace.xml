@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="00.03.001">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IQC to IQC_LGT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/IQC to IQC_LGT.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IQC to IQC_SJ.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/IQC to IQC_SJ.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAT to IQC_LGT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAT to IQC_LGT.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PQC_TZD.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/result-edited - IQC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/result/result-edited - IQC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/IQC-B.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TB-IQC-000.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TB-IQC-B.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-TB-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-TB-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/IQC-B.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TB-IQC-000.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TB-IQC-B.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="delete some files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -229,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686811923087</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add PQC creater">
+      <created>1732091765923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732091765924</updated>
+    </task>
+    <task id="LOCAL-00006" summary="delete some files">
+      <created>1732092192352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732092192352</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,6 +240,8 @@
     <MESSAGE value="00.02.003" />
     <MESSAGE value="00.02.004" />
     <MESSAGE value="00.03.001" />
-    <option name="LAST_COMMIT_MESSAGE" value="00.03.001" />
+    <MESSAGE value="add PQC creater" />
+    <MESSAGE value="delete some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete some files" />
   </component>
 </project>
