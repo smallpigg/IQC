@@ -6,6 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="f95851c4-5206-4ba3-829c-5a7461ff6ae8" name="Changes" comment="00.03.001">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IQC to IQC_LGT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/IQC to IQC_LGT.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IQC to IQC_SJ.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/IQC to IQC_SJ.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MAT to IQC_LGT.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MAT to IQC_LGT.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PQC_TZD.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/result-edited - IQC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/result/result-edited - IQC.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/IQC-B.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TB-IQC-000.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TB-IQC-B.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-AAA-B-TB-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/20240511/TZD-ABA-B-TB-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/IQC-B.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TB-IQC-000.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TB-IQC-B.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-AAA-B-TB-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-IQC.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC-new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/TZD-ABA-B-TB-IQC.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +49,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -40,15 +67,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/xx/PycharmProjects/IQC",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/xx/PycharmProjects/IQC&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.delete_columns_by_header">
     <configuration name="IQCproducter_WQ" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IQC" />
@@ -210,7 +237,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
