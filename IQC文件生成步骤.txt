@@ -1,7 +1,0 @@
-1. MATdata_reader.py #读取原始的word文件内容到excel文件
-2. delete_columns_by_header.py #删除指定列
-3. replace_string_in_excel.py #替换指定字符串
-4. 根据需要修改excel文件的表头，并修改template模板文件。使excel文件表头和模板文件对应
-5. IQCproducter.py #生成IQC文件，此步骤可以修改文件名等。
-6. Print_tablesnum_in_wordfile.py #根据需要可以运行此文件读取word文件中正文的表格数量保存到result_TableNum.csv中
-7. Save_Pictures.py #根据需要保存word文件中的图片到指定文件夹备用。
